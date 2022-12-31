@@ -2,7 +2,7 @@ function drawGuessedWord(){
     xcoord = 400; 
     ycoord = 50;
     yspace = 70;
-    xspace = 70;
+    xspace = 70; //this is the y space
     var tempguessedWord = "";
     drawRects();
     xcoord = 415;
