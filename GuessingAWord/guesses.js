@@ -7,7 +7,7 @@ function wordwasguessed(){
   if (wordsList.includes(guessedWord.toLowerCase())){
     guessedWord.toLowerCase;
     timesGuessed +=1;
-    guessedList += guessedWord; 
+    guessedList.push(guessedWord); 
     numberOWords +=1;
     console.log(guessedList)
     guessedWord = "";
