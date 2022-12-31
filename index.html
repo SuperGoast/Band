@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Gamedev Canvas Workshop</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      canvas {
+        background: #eee;
+        display: block;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="2000" height="670"></canvas>
+    <script type="text/javascript" src="GuessingAWord/wordList.js" ></script>
+    <script type="text/javascript" src="drawingEnvironment/drawRects.js"></script>
+    <script type="text/javascript" src="drawingEnvironment/drawKeys.js"></script>
+    <script type="text/javascript" src="GuessingAWord/guesses.js"></script>
+    <script type="text/javascript" src="GuessingAWord/keyPressed.js" ></script>
+    <script type="text/javascript" src="drawingEnvironment/drawGameScreen.js" ></script>
+    <script type="text/javascript" src="drawingEnvironment/drawGuessedWord.js" ></script>
+    <script>
+      var c = document.getElementById("myCanvas");
+      var ctx = c.getContext("2d");
+      var xcoord = 400; 
+      var ycoord = 50;
+      var size = 60;
+      var xspace = 10 + size;
+      var yspace = 10 + size;
+      var keyXSize = 20;
+      var keyYsize = 10; 
+      var letter = ""; 
+      var keypressed = "not rewritten";
+      var guessedWord = "";
+      var row = 0;
+      var e = "";
+      var timesGuessed = 0;
+      var guessedList = [""];
+      var backspace = false;
+      var numberOWords = 0;
+      drawGameScreen();
+    </script>
+  </body>
+</html>
