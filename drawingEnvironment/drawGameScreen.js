@@ -1,7 +1,7 @@
 function drawGameScreen(){
   const canvas = document.getElementById("myCanvas");
   const ctx = canvas.getContext("2d");
-  drawRects();
+  drawRects("#ffffff","#ffffff","#ffffff","#ffffff","#ffffff",6,true,0);
   drawKeys();
   keyPressed(); 
   /*function draw(){

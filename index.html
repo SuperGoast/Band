@@ -43,6 +43,9 @@
       var guessedList = [""];
       var backspace = false;
       var numberOWords = 0;
+      function delay(time) {
+        return new Promise(resolve => setTimeout(resolve, time));
+      }
       drawGameScreen();
     </script>
   </body>

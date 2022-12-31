@@ -13,7 +13,7 @@ function keyPressed(){
             ycoord = 50;
             yspace = 70;
             xspace = 70;
-            drawGuessedWord();
+            drawGuessedWord("#ffffff");
         break
 
         case 13:
@@ -29,7 +29,7 @@ function keyPressed(){
             if (guessedWord.length<5 && (e.keyCode > 64 && e.keyCode < 91)){
                 guessedWord+= String.fromCharCode(e.keyCode);
                 console.log("in range");
-                drawGuessedWord();
+                drawGuessedWord("#ffffff");
             }
             console.log(guessedWord);
         }

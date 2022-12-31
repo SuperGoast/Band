@@ -1,11 +1,15 @@
 function wrongGuess(string){
   console.log(string);
+  var wronged = guessedWord;
+  guessedWord = "WRONG";
+  drawGuessedWord("#ff0000");
+  guessedWord = wronged;
+  delay(1000).then(() => drawGuessedWord("#ffffff"));
 }
 //keypressed 
 function wordwasguessed(){
   console.log(guessedWord);
   if (wordsList.includes(guessedWord.toLowerCase())){
-    guessedWord.toLowerCase;
     timesGuessed +=1;
     guessedList.push(guessedWord); 
     numberOWords +=1;

@@ -1,10 +1,10 @@
-function drawGuessedWord(){
+function drawGuessedWord(color){
     xcoord = 400; 
     ycoord = 50;
     yspace = 70;
     xspace = 70; //this is the y space
     var tempguessedWord = "";
-    drawRects();
+    drawRects(color,color,color,color,color,1,true, (numberOWords));
     xcoord = 415;
     if(numberOWords<6){
         ctx.beginPath();
