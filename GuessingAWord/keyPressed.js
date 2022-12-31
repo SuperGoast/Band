@@ -16,7 +16,7 @@ function keyPressed(){
             drawGuessedWord("#ffffff");
         break
 
-        case 13:
+        case 13: 
             if(guessedWord.length == 5){
                 wordwasguessed();
                 console.log("You guessed a word!");
@@ -24,6 +24,9 @@ function keyPressed(){
                 wrongGuess("not long enoguh");
             }
         break
+        case 27:
+            console.log("let me out");
+            window.close();
         default:
             console.log(String.fromCharCode(e.keyCode));
             if (guessedWord.length<5 && (e.keyCode > 64 && e.keyCode < 91)){

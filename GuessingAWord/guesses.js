@@ -10,8 +10,26 @@ function wrongGuess(string){
 function wordwasguessed(){
   console.log(guessedWord);
   if (wordsList.includes(guessedWord.toLowerCase())){
-    timesGuessed +=1;
+    var colorList = [""];
+    for(let i = 0; i<6; i++){
+      guessedWord = guessedWord.toLowerCase();
+      var letterGW = guessedWord.charAt(i);
+      var letterCW = chosenWord.charAt(i);
+      var index = chosenWord.indexOf(letterGW);
+      if(letterCW == letterGW){
+        color = "#009900";
+      }else if(index != -1 ){
+        color = "#ffcc00";
+      }else{
+        color = "#cccccc"; 
+      }
+      colorList.push(color);
+    }
+    guessedWord = guessedWord.toUpperCase();
+    drawRects(colorList[1], colorList[2], colorList[3], colorList[4], colorList[5], 1, false, numberOWords);
+    drawGuessedWord('transparent');
     guessedList.push(guessedWord); 
+    timesGuessed +=1;
     numberOWords +=1;
     console.log(guessedList)
     guessedWord = "";

@@ -5,6 +5,7 @@ function drawRects(color1, color2, color3, color4, color5, rows, border, row){
         ycoord = 50 + (yspace*row);
         for(let i=0; i<rows; i++){
           for(let j=0; j<5; j++){
+            ctx.beginPath();
             ctx.rect(xcoord, ycoord, size, size);
             var color = colorList[j];
             ctx.fillStyle = color;
@@ -14,9 +15,9 @@ function drawRects(color1, color2, color3, color4, color5, rows, border, row){
             }
             ctx.fill();
             xcoord += xspace ;
+            ctx.closePath(); 
           }
           ycoord += yspace;
           xcoord = 400; 
         }
-  ctx.closePath(); 
 }

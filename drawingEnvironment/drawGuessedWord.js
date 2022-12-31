@@ -4,7 +4,7 @@ function drawGuessedWord(color){
     yspace = 70;
     xspace = 70; //this is the y space
     var tempguessedWord = "";
-    drawRects(color,color,color,color,color,1,true, (numberOWords));
+    drawRects(color,color,color,color,color, 1 ,true, (numberOWords));
     xcoord = 415;
     if(numberOWords<6){
         ctx.beginPath();

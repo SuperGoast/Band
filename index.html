@@ -24,7 +24,9 @@
     <script type="text/javascript" src="GuessingAWord/keyPressed.js" ></script>
     <script type="text/javascript" src="drawingEnvironment/drawGameScreen.js" ></script>
     <script type="text/javascript" src="drawingEnvironment/drawGuessedWord.js" ></script>
+    <script type="text/javascript" src="introScreen/drawInstructions.js" ></script>
     <script>
+      
       var c = document.getElementById("myCanvas");
       var ctx = c.getContext("2d");
       var xcoord = 400; 
@@ -43,10 +45,12 @@
       var guessedList = [""];
       var backspace = false;
       var numberOWords = 0;
-      function delay(time) {
+      var chosenWord = "bayou";
+      drawInstructions();
+      /*function delay(time) {
         return new Promise(resolve => setTimeout(resolve, time));
       }
-      drawGameScreen();
+      drawGameScreen();*/
     </script>
   </body>
 </html>
