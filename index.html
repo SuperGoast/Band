@@ -16,20 +16,21 @@
     </style>
   </head>
   <body>
-    <canvas id="myCanvas" width="2000" height="670"></canvas>
+    <canvas id="myCanvas" width="1400" height="800"></canvas>
     <script type="text/javascript" src="GuessingAWord/wordList.js" ></script>
+    <script type="text/javascript" src="GuessingAWord/keyPressed.js" ></script>
     <script type="text/javascript" src="drawingEnvironment/drawRects.js"></script>
     <script type="text/javascript" src="drawingEnvironment/drawKeys.js"></script>
     <script type="text/javascript" src="GuessingAWord/guesses.js"></script>
-    <script type="text/javascript" src="GuessingAWord/keyPressed.js" ></script>
     <script type="text/javascript" src="drawingEnvironment/drawGameScreen.js" ></script>
     <script type="text/javascript" src="drawingEnvironment/drawGuessedWord.js" ></script>
     <script type="text/javascript" src="introScreen/drawInstructions.js" ></script>
     <script>
       
+      keyPressed();
       var c = document.getElementById("myCanvas");
       var ctx = c.getContext("2d");
-      var xcoord = 400; 
+      var xcoord = 475; 
       var ycoord = 50;
       var size = 60;
       var xspace = 10 + size;
@@ -46,11 +47,16 @@
       var backspace = false;
       var numberOWords = 0;
       var chosenWord = "bayou";
-      drawInstructions();
+      var intro = false;
+      var run = false; 
+      //drawInstructions();
       /*function delay(time) {
         return new Promise(resolve => setTimeout(resolve, time));
-      }
-      drawGameScreen();*/
+      }*/
+      //while(intro == true & run == false){
+        drawGameScreen();
+        //run = true; 
+      //}
     </script>
   </body>
 </html>

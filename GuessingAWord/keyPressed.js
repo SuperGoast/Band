@@ -1,5 +1,7 @@
+
 function keyPressed(){
     document.addEventListener('keydown', recordKey);
+
     function recordKey(e) {
         keypressed = e.key; 
         console.log("You pressed " + e.key);
@@ -20,6 +22,8 @@ function keyPressed(){
             if(guessedWord.length == 5){
                 wordwasguessed();
                 console.log("You guessed a word!");
+            }else if (intro == false){
+                intro = true;
             }else{
                 wrongGuess("not long enoguh");
             }
@@ -27,6 +31,8 @@ function keyPressed(){
         case 27:
             console.log("let me out");
             window.close();
+        break 
+            intro = true;
         default:
             console.log(String.fromCharCode(e.keyCode));
             if (guessedWord.length<5 && (e.keyCode > 64 && e.keyCode < 91)){

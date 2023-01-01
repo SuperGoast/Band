@@ -18,6 +18,6 @@ function drawRects(color1, color2, color3, color4, color5, rows, border, row){
             ctx.closePath(); 
           }
           ycoord += yspace;
-          xcoord = 400; 
+          xcoord = 475; 
         }
 }

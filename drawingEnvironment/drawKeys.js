@@ -3,30 +3,30 @@ function drawKeys(){
   //Draws Keyboard
   var stringArray = "QWERTYUIOPASDFGHJKL ZXCVBNM ";
   var tempchar = "";
-  xcoord = 425;
+  xcoord = 500;
   xspace = 5;
   for(let i=0; i<28; i++){
     letter = stringArray.charAt(i);
     keyYSize = 40;
     yspace = 35 + keyYsize;
     if(i==0){
-      ycoord = 470;
+      ycoord = 495;
     }else if(i==10){
-      xcoord = 437;
+      xcoord = 512;
       ycoord += yspace ;
     }else if(i==19){
       letter = "<--"
       keyXSize = 50;
       ycoord += yspace;
       xspace = 55;
-      xcoord = 430 - xspace;
+      xcoord = 505 - xspace;
     }else if(i==20){
-      xcoord = 460;
+      xcoord = 540;
     }else if(i==27){
       letter = "Enter";
       keyXSize = 60;
       xpace = 55;
-      xcoord = 620 - xspace;
+      xcoord = 705 - xspace;
     }else{
       console.log("error");
     } 
@@ -37,7 +37,7 @@ function drawKeys(){
     ctx.fill();
     keyXSize = 20;
   }
-  xcoord = 425;
+  xcoord = 500;
   xspace = 5;
   for(let i=0; i<28; i++){
     //tempchar = string.charAt(i);
@@ -45,23 +45,23 @@ function drawKeys(){
     keyYSize = 40;
     yspace = 35 + keyYsize;
     if(i==0){
-      ycoord = 470;
+      ycoord = 495;
     }else if(i==10){
-      xcoord = 437;
+      xcoord = 512;
       ycoord += yspace ;
     }else if(i==19){
       letter = "<--"
       keyXSize = 50;
       ycoord += yspace;
       xspace = 55;
-      xcoord = 430 - xspace;
+      xcoord = 505 - xspace;
     }else if(i==20){
-      xcoord = 460;
+      xcoord = 540;
     }else if(i==27){
       letter = "Enter";
       keyXSize = 50;
       xpace = 55;
-      xcoord = 630 - xspace;
+      xcoord = 715 - xspace;
     }else{
       console.log("error");
     } 
