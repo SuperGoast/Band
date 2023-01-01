@@ -9,7 +9,9 @@ for( let i=0; i< wordList.length; i++){
         letter = alphabet.charAt(j);
         for(let k=0; k<listOChar.length; k++){
             if(word.charAt(k) == letter){
-                alphaNumsArr[j][k] += 1;
+                //console.log(alphaNumsArr);
+                //console.log("j = " + j + " k = " + k);
+                alphaNumsArr[k][j] += 1;
             }
         }
     }
