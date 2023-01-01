@@ -3,6 +3,8 @@
         //green "#009900"
         // yellow "#ffcc00"
         //gray "#cccccc"
+//for style go with a spy theme 'decoding the message' and make everything balck and white. Also
+//add screen reader stuff (and maybe easier mode) for accesibility. maybe spys katy and miley
 function drawInstructions(){
     const canvas = document.getElementById("myCanvas");
     const ctx = canvas.getContext("2d");
