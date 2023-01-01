@@ -1,7 +1,7 @@
 var alphabet = "abcdefghijklmnopqrstuvwxyz"
 var alphaArr = Array.from(alphabet);
 var alphaNumsArr = [[0],[0], [0], [0], [0]];
-var letter = ""
+var letter = "";
 for( let i=0; i< wordList.length; i++){
     var word = wordList[i];
     var listOChar = Array.from(word);
@@ -16,9 +16,9 @@ for( let i=0; i< wordList.length; i++){
         }
     }
 }
-for(let k=0; k<alphaArr.length; k++){
-    alphaNumsArr.push(alphaArr[k]);
-}
+//for(let k=0; k<alphaArr.length; k++){
+    //alphaNumsArr.push(alphaArr[k]);
+//}
 for(let i=0; i<5; i++){
     alphaNumsArr.pop();
     console.log(alphaNumsArr);
