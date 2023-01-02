@@ -1,12 +1,14 @@
 function drawGameScreen(){
+  if( freePlay == true){
   var randomNumber =(Math.random()*(wordList.length));
   chosenWord = wordList[randomNumber | 0];
   console.log(chosenWord);
+  }else{
+    chosenWord = "money";
+  }
   //chosenWord = "coral";
-  const canvas = document.getElementById("myCanvas");
-  const ctx = canvas.getContext("2d");
   ctx.beginPath();
-  ctx.rect(0, 0, 1400, 500);
+  ctx.rect(0, 0, 1400, 800);
   ctx.fillStyle = 'white';
   ctx.fill();
   ctx.closePath(); 

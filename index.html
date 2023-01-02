@@ -16,10 +16,9 @@
     </style>
   </head>
   <body>
-    <canvas id="myCanvas" width="1400" height="800"></canvas>
+    <canvas id="myCanvas" width="1400" height="650"></canvas>
     <script type="text/javascript" src="calculations/wordList.js" ></script>
     <script type="text/javascript" src="calculations/numMethods4Words.js" ></script>
-    <script type="text/javascript" src="storingData.js" ></script>
     <script type="text/javascript" src="GuessingAWord/keyPressed.js" ></script>
     <script type="text/javascript" src="drawingEnvironment/drawRects.js"></script>
     <script type="text/javascript" src="drawingEnvironment/drawKeys.js"></script>
@@ -27,6 +26,8 @@
     <script type="text/javascript" src="drawingEnvironment/drawGameScreen.js" ></script>
     <script type="text/javascript" src="drawingEnvironment/drawGuessedWord.js" ></script>
     <script type="text/javascript" src="introScreen/drawInstructions.js" ></script>
+    <script type="text/javascript" src="drawingEnvironment/drawResultsScreen.js" ></script>
+    <script type="text/javascript" src="buttonClicks.js"></script>
     <script>
       var c = document.getElementById("myCanvas");
       var ctx = c.getContext("2d");
@@ -52,15 +53,22 @@
       var chosenWord = "";
       var listOCorrectLetters = [""];
       //change later
-      var freePlay = true;
-      //drawInstructions();
+      var freePlay = false;
+      //drawResultsScreen();
+      drawInstructions();
       /*function delay(time) {
         return new Promise(resolve => setTimeout(resolve, time));
       }*/
       //while(intro == true & run == false){
-        drawGameScreen();
+       // drawGameScreen();
         //run = true; 
       //}
+        /* Notes for morning ramsey: first, you can do this work hard and take breaks often,
+        two caffine first thing in the morning let it set in during breakfast, third buttons 
+        are the next thing to add for bottom of first screen top of second and bottom of 
+        third: how to do that is in email from kelly, third ALWAYS refrence the list and finish
+         that the very first thing, fourth WORK AT DESK w/ noise canceling in will help you focus
+        */
     </script>
   </body>
 </html>

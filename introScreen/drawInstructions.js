@@ -9,10 +9,42 @@
 function drawInstructions(){
     const canvas = document.getElementById("myCanvas");
     const ctx = canvas.getContext("2d");
+    ctx.beginPath();
+        ctx.rect(0, 0, c.width, c.height);
+        var color = 'white';
+        ctx.fillStyle = color;
+        ctx.fill();
+    ctx.closePath();
+    //drawing buttons 
+      var freePlayBtn = document.createElement("button");
+      freePlayBtn.style.width = '200px'; // setting the width to 200px
+      freePlayBtn.style.height = '50px';
+      freePlayBtn.style.position = "absolute";
+      freePlayBtn.style.left = "55%";
+      freePlayBtn.innerHTML = "Free Play";
+      var body = document.getElementsByTagName("body")[0];
+      body.appendChild(freePlayBtn);
+      freePlayBtn.addEventListener ("click", function() {
+        freePlayClick();
+        document.body.removeChild(freePlayBtn);
+        document.body.removeChild(challengeBtn);
+      });
+      var challengeBtn = document.createElement("button");
+      challengeBtn.style.width = '200px'; // setting the width to 200px
+      challengeBtn.style.height = '50px';
+      challengeBtn.style.position = "absolute";
+      challengeBtn.style.left = "35%";
+      challengeBtn.innerHTML = "Challenge";
+      var body = document.getElementsByTagName("body")[0];
+      body.appendChild(challengeBtn);
+      challengeBtn.addEventListener ("click", function() {
+        challengeClick();
+      });
+    //drawing rectangles 
     var colorList1 = ["#009900", "#cccccc", "#cccccc", "#cccccc", "#cccccc"];
     var colorList2 = ["#cccccc", "#ffcc00", "#cccccc", "#cccccc", "#cccccc"];
     var colorList3 = ["#cccccc", "#ffcc00", "#cccccc", "#cccccc", "#cccccc"];
-    var yspaced = 90;
+    var yspaced = 50;
     var listOExamples = ["WEARY", "PILLS", "VAGUE"];
     for(let i=0; i<3; i++){
         var string = listOExamples[i];
@@ -33,16 +65,16 @@ function drawInstructions(){
         var color = colorList[j];
         ctx.fillStyle = color;
         ctx.fill();
-        xcoord += xspace ;
         ctx.font = "50px Courier";
         ctx.fillStyle = 'black';
-        ctx.fillText(string.charAt(j),xcoord, 90+yspaced);
+        ctx.fillText(string.charAt(j),xcoord+15, ycoord+45);
+        xcoord += xspace ;
         ctx.closePath(); 
         }
-        ctx.font = "50px Courier";
         ycoord += yspace;
         xcoord = 475; 
     }
+    //drawing text
     ctx.beginPath();
     ctx.font = "50px Courier";
     ctx.fillStyle = "#000000";
@@ -57,7 +89,7 @@ function drawInstructions(){
     ctx.fillText("M is in the word in the correct spot",xcoord, 272+yspaced);
     ctx.fillText("F is in the word not in the correct spot",xcoord, 386+yspaced);
     ctx.fillText("W is not in the word in any spot",xcoord, 500+yspaced);
-    ctx.fillText("Press 1 to start",xcoord+80, 550+yspaced);
+    ctx.fillText("Use the keyboard to type your answer",xcoord+50, 550+yspaced);
+    ctx.fillText("To start the game pick a gamemode",xcoord+70, 574+yspaced);
     ctx.closePath(); 
-    xcoord += 70;
 }
