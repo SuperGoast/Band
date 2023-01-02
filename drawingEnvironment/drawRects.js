@@ -4,6 +4,7 @@ function drawRects(color1, color2, color3, color4, color5, rows, border, row){
         colorList = [color1, color2, color3, color4, color5]
         ycoord = 50 + (yspace*row);
         for(let i=0; i<rows; i++){
+          xcoord = 475; 
           for(let j=0; j<5; j++){
             ctx.beginPath();
             ctx.rect(xcoord, ycoord, size, size);

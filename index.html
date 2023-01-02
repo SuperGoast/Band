@@ -19,6 +19,7 @@
     <canvas id="myCanvas" width="1400" height="800"></canvas>
     <script type="text/javascript" src="calculations/wordList.js" ></script>
     <script type="text/javascript" src="calculations/numMethods4Words.js" ></script>
+    <script type="text/javascript" src="storingData.js" ></script>
     <script type="text/javascript" src="GuessingAWord/keyPressed.js" ></script>
     <script type="text/javascript" src="drawingEnvironment/drawRects.js"></script>
     <script type="text/javascript" src="drawingEnvironment/drawKeys.js"></script>
@@ -27,13 +28,12 @@
     <script type="text/javascript" src="drawingEnvironment/drawGuessedWord.js" ></script>
     <script type="text/javascript" src="introScreen/drawInstructions.js" ></script>
     <script>
-      
-      keyPressed();
       var c = document.getElementById("myCanvas");
       var ctx = c.getContext("2d");
       var xcoord = 475; 
       var ycoord = 50;
       var size = 60;
+      var score = 0;
       var xspace = 10 + size;
       var yspace = 10 + size;
       var keyXSize = 20;
@@ -47,9 +47,12 @@
       var guessedList = [""];
       var backspace = false;
       var numberOWords = 0;
-      var chosenWord = "bayou";
       var intro = false;
       var run = false; 
+      var chosenWord = "";
+      var listOCorrectLetters = [""];
+      //change later
+      var freePlay = true;
       //drawInstructions();
       /*function delay(time) {
         return new Promise(resolve => setTimeout(resolve, time));

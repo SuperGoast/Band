@@ -4,22 +4,30 @@ function wrongGuess(string){
   guessedWord = "WRONG";
   drawGuessedWord("#ff0000");
   guessedWord = wronged;
-  delay(1000).then(() => drawGuessedWord("#ffffff"));
+  //delay(1000).then(() => drawGuessedWord("#ffffff"));
+  drawGuessedWord("#ffffff");
 }
 //keypressed 
 function wordwasguessed(){
   console.log(guessedWord);
-  if (wordsList.includes(guessedWord.toLowerCase())){
+  var scoreNum = 0; 
+  if (wordList.includes(guessedWord.toLowerCase())){
     var colorList = [""];
-    for(let i = 0; i<6; i++){
+    for(let i=0; i<6; i++){
       guessedWord = guessedWord.toLowerCase();
       var letterGW = guessedWord.charAt(i);
       var letterCW = chosenWord.charAt(i);
       var index = chosenWord.indexOf(letterGW);
       if(letterCW == letterGW){
         color = "#009900";
+        if(listOCorrectLetters[i]!=letterGW){
+        score = 100+(10*(6-timesGuessed));
+        listOCorrectLetters.push(letterGW);
+        }
       }else if(index != -1 ){
         color = "#ffcc00";
+        scoreNum = alphabet.indexOf(letterGW);
+        score -= alphaNumsArr[i][scoreNum];
       }else{
         color = "#cccccc"; 
       }

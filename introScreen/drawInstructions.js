@@ -5,6 +5,7 @@
         //gray "#cccccc"
 //for style go with a spy theme 'decoding the message' and make everything balck and white. Also
 //add screen reader stuff (and maybe easier mode) for accesibility. maybe spys katy and miley
+//easy medium and hard would be easy to implement with 4 letters 5 letters & 6 letters. 
 function drawInstructions(){
     const canvas = document.getElementById("myCanvas");
     const ctx = canvas.getContext("2d");

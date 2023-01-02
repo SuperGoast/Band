@@ -1,11 +1,11 @@
 function drawGuessedWord(color){
-    xcoord = 400; 
+    xcoord = 490; 
     ycoord = 50;
     yspace = 70;
     xspace = 70; //this is the y space
     var tempguessedWord = "";
     drawRects(color,color,color,color,color, 1 ,true, (numberOWords));
-    xcoord = 415;
+    xcoord = 490;
     if(numberOWords<6){
         ctx.beginPath();
         for(var j = 0; j<(numberOWords+1 ); j++){
@@ -18,7 +18,7 @@ function drawGuessedWord(color){
                 ycoord = 60 + (yspace* (j-1));
                 tempguessedWord = guessedList[j];
                 console.log(guessedList[j]);
-                xcoord = 415;
+                xcoord = 490;
             }
             //}
             console.log("in loop");
@@ -37,6 +37,6 @@ function drawGuessedWord(color){
         }
         ctx.closePath();
     }
-    xcoord = 400; 
+    xcoord = 475; 
     ycoord = 50;
 }
