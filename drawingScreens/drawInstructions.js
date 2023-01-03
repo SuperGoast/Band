@@ -15,8 +15,7 @@ function drawInstructions(){
         ctx.fillStyle = color;
         ctx.fill();
     ctx.closePath();
-    //drawing buttons 
-      var freePlayBtn = document.createElement("button");
+     var freePlayBtn = document.createElement("button");
       freePlayBtn.style.width = '200px'; // setting the width to 200px
       freePlayBtn.style.height = '50px';
       freePlayBtn.style.position = "absolute";
@@ -24,21 +23,19 @@ function drawInstructions(){
       freePlayBtn.innerHTML = "Free Play";
       var body = document.getElementsByTagName("body")[0];
       body.appendChild(freePlayBtn);
+      var startBtn = document.createElement("button");
+      startdth = '200px'; // setting the width to 200px
+      startBtn.style.height = '50px';
+      startBtn.style.position = "absolute";
+      startBtn.style.left = "35%";
+      startBtn.innerHTML = "start";
+      var body = document.getElementsByTagName("body")[0];
+      body.appendChild(startBtn);
+      startBtn.addEventListener ("click", function() {
+        startClick();
+      });
       freePlayBtn.addEventListener ("click", function() {
         freePlayClick();
-        document.body.removeChild(freePlayBtn);
-        document.body.removeChild(challengeBtn);
-      });
-      var challengeBtn = document.createElement("button");
-      challengeBtn.style.width = '200px'; // setting the width to 200px
-      challengeBtn.style.height = '50px';
-      challengeBtn.style.position = "absolute";
-      challengeBtn.style.left = "35%";
-      challengeBtn.innerHTML = "Challenge";
-      var body = document.getElementsByTagName("body")[0];
-      body.appendChild(challengeBtn);
-      challengeBtn.addEventListener ("click", function() {
-        challengeClick();
       });
     //drawing rectangles 
     var colorList1 = ["#009900", "#cccccc", "#cccccc", "#cccccc", "#cccccc"];
@@ -74,10 +71,12 @@ function drawInstructions(){
         ycoord += yspace;
         xcoord = 475; 
     }
+    yspaced = 100
     //drawing text
     ctx.beginPath();
     ctx.font = "50px Courier";
     ctx.fillStyle = "#000000";
+    ctx.fillText("Decode the message",575, yspaced-70);
     ctx.fillText("How to Play",575, yspaced-20);
     ctx.font = "36px Courier";
     ctx.fillText("Guess the Word in 6 tries",xcoord, 30 + yspaced);

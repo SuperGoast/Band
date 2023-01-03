@@ -16,23 +16,20 @@ function keyPressed(){
             xspace = 70;
             drawGuessedWord("#ffffff");
         break
-        case 13: 
-            if(guessedWord.length == 5){
+        case 13: // enter
+            if(guessedWord.length == chosenWord.length){
                 wordwasguessed();
                 console.log("You guessed a word!");
-            }else if (intro == false){
-                intro = true;
             }else{
                 wrongGuess("not long enoguh");
             }
         break
         case 27:
-            console.log("let me out");
-            window.close();
+            drawEndScreen();
         break 
         default:
             console.log(String.fromCharCode(e.keyCode));
-            if (guessedWord.length<5 && (e.keyCode > 64 && e.keyCode < 91)){
+            if (guessedWord.length < chosenWord.length && (e.keyCode > 64 && e.keyCode < 91)){
                 guessedWord+= String.fromCharCode(e.keyCode);
                 console.log("in range");
                 drawGuessedWord("#ffffff");

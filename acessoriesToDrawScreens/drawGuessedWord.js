@@ -5,8 +5,10 @@ function drawGuessedWord(color){
     xspace = 70; //this is the y space
     var tempguessedWord = "";
     drawRects(color,color,color,color,color, 1 ,true, (numberOWords));
-    xcoord = 490;
-    if(numberOWords<6){
+    xcoord = 490
+    if(numberOWords==6){
+        drawEndScreen();
+    }
         ctx.beginPath();
         for(var j = 0; j<(numberOWords+1 ); j++){
             //for(var k = 0; k< ((guessedList.length)/5); k++){
@@ -29,14 +31,12 @@ function drawGuessedWord(color){
             for(let i=0; i<(length); i++){
                 ctx.font = "50px Courier";
                 ctx.fillStyle = "#000000";
-                console.log(tempguessedWord.charAt(i));
-                console.log("maybe written");
+                console.log("Maybe written "+ tempguessedWord.charAt(i));
                 ctx.fillText(tempguessedWord.charAt(i),xcoord, (ycoord + parseInt(yspace/2)));
                 xcoord += 70; 
             }
         }
         ctx.closePath();
-    }
     xcoord = 475; 
     ycoord = 50;
 }

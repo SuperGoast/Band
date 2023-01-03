@@ -7,10 +7,27 @@ function wrongGuess(string){
   //delay(1000).then(() => drawGuessedWord("#ffffff"));
   drawGuessedWord("#ffffff");
 }
+var timesGuessedRight = 0; 
 //keypressed 
 function wordwasguessed(){
+  var bannedWord = false; 
   if (guessedWord.toLowerCase() == chosenWord){
-    drawResultsScreen();
+    if (timesGuessed == 0){
+    score += 800; 
+    }else{
+    score += (700 - timesGuessed* 100);
+    }
+    timesGuessedRight +=1;
+    if (timesGuessedRight == chosenPhrase.length){
+      drawResultsScreen();
+    }else{
+    
+    drawGuessedWord("#ff0000");
+    setTimeout(1000);
+    drawGuessedWord("#ffffff");
+      guessedWord = "";
+      chosenWord = chosenPhrase[timesGuessedRight];
+    }
   }else{
     console.log(guessedWord);
     var scoreNum = 0; 
@@ -32,10 +49,13 @@ function wordwasguessed(){
           scoreNum = alphabet.indexOf(letterGW);
           score -= alphaNumsArr[i][scoreNum];
         }else{
+          bannedLetters.push(letterGW);
           color = "#cccccc"; 
+          bannedWord = true; 
         }
         colorList.push(color);
       }
+      if(bannedWord == false){
       guessedWord = guessedWord.toUpperCase();
       drawRects(colorList[1], colorList[2], colorList[3], colorList[4], colorList[5], 1, false, numberOWords);
       drawGuessedWord('transparent');
@@ -45,6 +65,9 @@ function wordwasguessed(){
       console.log(guessedList)
       guessedWord = "";
       console.log("You guessed");
+      }else{
+        wrongGuess("banned word");
+      }
     }else{
       wrongGuess("Not in word list");
     }
